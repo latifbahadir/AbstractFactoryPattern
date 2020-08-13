@@ -1,12 +1,8 @@
 ﻿using System;
+using AbstractFactory.@interface;
 
 namespace AbstractFactory
 {
-     public interface IAbstractProductA
-    {
-        string UsefulFunctionA();
-    }
-
     class ConcreteProductA1 : IAbstractProductA
     {
         public string UsefulFunctionA()
@@ -22,12 +18,6 @@ namespace AbstractFactory
             return "The result of the product A2.";
         }
     }
-    public interface IAbstractProductB
-    {
-        string UsefulFunctionB();
-        string AnotherUsefulFunctionB(IAbstractProductA collaborator);
-    }
-
     class ConcreteProductB1 : IAbstractProductB
     {
         public string UsefulFunctionB()
@@ -55,12 +45,6 @@ namespace AbstractFactory
             return $"The result of the B2 collaborating with the ({result})";
         }
     }
-    public interface IAbstractFactory
-    {
-        IAbstractProductA CreateProductA();
-        IAbstractProductB CreateProductB();
-    }
-
     class ConcreteFactory1 : IAbstractFactory
     {
         public IAbstractProductA CreateProductA()
